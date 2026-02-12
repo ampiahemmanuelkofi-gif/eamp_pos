@@ -1,0 +1,70 @@
+/* Main Style */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --sidebar-width: 250px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.sidebar {
+    /* position: fixed; removed to work within d-flex */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Changed from min-height to fix sticky constraint */
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    width: var(--sidebar-width);
+    z-index: 100;
+    padding-top: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    margin-left: 0;
+    /* Updated dynamically via header structure but keeping clean here */
+    padding: 1.5rem;
+}
+
+/* Enhancements for cards */
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.5rem;
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn-lg {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* POS Specific Styles */
+.product-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
